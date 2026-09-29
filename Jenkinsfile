@@ -26,8 +26,11 @@ pipeline{
             steps{
                 echo "Testing the application"
                 sh '''
+                . venv/bin/activate
+                
                 echo "Running without name"
                 python3 my-app/hello.py
+                
                 echo "Running with name "
                 python3 my-app/hello.py -name=Aradhya
                 '''
