@@ -14,6 +14,9 @@ pipeline{
             steps{
                 echo "Building the application"
                 sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                
                 cd my-app
                 pip install -r requirements.txt
                 '''
